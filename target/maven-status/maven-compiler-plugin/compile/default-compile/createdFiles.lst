@@ -1,0 +1,8 @@
+com\stackextend\generatepdfdocument\model\OrderEntryModel.class
+com\stackextend\generatepdfdocument\service\MockOrderService$1.class
+com\stackextend\generatepdfdocument\service\MockOrderService.class
+com\stackextend\generatepdfdocument\InvoiceGeneratorApplication.class
+com\stackextend\generatepdfdocument\model\AddressModel.class
+com\stackextend\generatepdfdocument\service\InvoiceService.class
+com\stackextend\generatepdfdocument\model\OrderModel.class
+com\stackextend\generatepdfdocument\controller\InvoiceController.class
