@@ -307,10 +307,10 @@ San Jose, CA 95131]]></text>
 					<datasetRun subDataset="Dataset_VehicleTollingDetails" uuid="3aa47433-c989-4f2f-b689-32048eb5dea0">
 						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{vehicleTollDetailsList})]]></dataSourceExpression>
 					</datasetRun>
-					<jr:column width="96" uuid="8cdfb9c4-5aab-4b7e-b291-62f14b6f302a">
+					<jr:column width="156" uuid="8cdfb9c4-5aab-4b7e-b291-62f14b6f302a">
 						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="96" height="30" isRemoveLineWhenBlank="true" uuid="25a0a7e1-c833-4a55-b549-3e88ce05dd56"/>
+								<reportElement x="0" y="0" width="156" height="30" isRemoveLineWhenBlank="true" uuid="25a0a7e1-c833-4a55-b549-3e88ce05dd56"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book" isBold="true"/>
 								</textElement>
@@ -319,7 +319,7 @@ San Jose, CA 95131]]></text>
 						</jr:columnHeader>
 						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
 							<textField isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="96" height="20" uuid="152bc489-1a12-4bac-b00f-fe010a84d9c6"/>
+								<reportElement x="0" y="0" width="156" height="30" uuid="152bc489-1a12-4bac-b00f-fe010a84d9c6"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book"/>
 								</textElement>
@@ -327,59 +327,19 @@ San Jose, CA 95131]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="68" uuid="5d2e06b0-81f8-4bff-b5d5-2967f0cafe06">
+					<jr:column width="191" uuid="9b2de0e2-cbed-41af-8814-a9ade441d288">
 						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="68" height="30" isRemoveLineWhenBlank="true" uuid="b1e2bd0f-2b75-4283-a803-279958b2b73f"/>
+								<reportElement x="0" y="0" width="191" height="30" uuid="d307c886-f768-45bc-8fa0-6ae87d23e509"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book" isBold="true"/>
 								</textElement>
-								<text><![CDATA[Location]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
-							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="68" height="20" uuid="cf57ed47-7532-4f89-850b-33610c0d3bc2"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Franklin Gothic Book"/>
-								</textElement>
-								<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="90" uuid="9481341b-b253-4352-a270-af007405ccab">
-						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="55f728dd-8ac5-46a5-adbd-ca25c04eed8a"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Franklin Gothic Book" isBold="true"/>
-								</textElement>
-								<text><![CDATA[Entry Plaza]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
-							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="90" height="20" uuid="ebc2b51f-dbe0-4d01-8bb0-420a071b8124"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Franklin Gothic Book"/>
-								</textElement>
-								<textFieldExpression><![CDATA[$F{entryTollPlaza}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="68" uuid="9b2de0e2-cbed-41af-8814-a9ade441d288">
-						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement x="0" y="0" width="68" height="30" uuid="d307c886-f768-45bc-8fa0-6ae87d23e509"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Franklin Gothic Book" isBold="true"/>
-								</textElement>
-								<text><![CDATA[Entry Time]]></text>
+								<text><![CDATA[Number of Miles]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
 							<textField isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="68" height="20" uuid="51bcfe63-3250-4b07-9aec-ef8329df9fbb"/>
+								<reportElement x="0" y="0" width="191" height="30" uuid="51bcfe63-3250-4b07-9aec-ef8329df9fbb"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book"/>
 								</textElement>
@@ -387,59 +347,19 @@ San Jose, CA 95131]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="19d7917c-9264-43b5-b97b-462cfdf8ecf3">
+					<jr:column width="182" uuid="4a9f9ac3-a613-4079-9558-3488ec9d3d5d">
 						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="b6cb3e6c-e350-4872-9fb1-5956bd8e0683"/>
+								<reportElement x="0" y="0" width="182" height="30" uuid="6a98e809-22e3-4807-a6dc-f82dc5a1644b"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book" isBold="true"/>
 								</textElement>
-								<text><![CDATA[Exit Plaza]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
-							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="90" height="20" uuid="75beb3d6-2dac-41f2-876f-2fc73e89116c"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Franklin Gothic Book"/>
-								</textElement>
-								<textFieldExpression><![CDATA[$F{exitTollPlaza}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="68" uuid="e18ce178-05e4-4b30-9f13-fe356cc9cab3">
-						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement x="0" y="0" width="68" height="30" uuid="36bb4e8c-9b6f-461a-bab2-2cd8ff89a609"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Franklin Gothic Book" isBold="true"/>
-								</textElement>
-								<text><![CDATA[Exit Time]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
-							<textField isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="68" height="20" uuid="e6fd5764-6561-4ae5-9fc3-b89f31f6bd4a"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Franklin Gothic Book"/>
-								</textElement>
-								<textFieldExpression><![CDATA[$F{exitTollTime}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-					<jr:column width="65" uuid="4a9f9ac3-a613-4079-9558-3488ec9d3d5d">
-						<jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement x="0" y="0" width="65" height="30" uuid="6a98e809-22e3-4807-a6dc-f82dc5a1644b"/>
-								<textElement textAlignment="Center" verticalAlignment="Middle">
-									<font fontName="Franklin Gothic Book" isBold="true"/>
-								</textElement>
-								<text><![CDATA[Amount]]></text>
+								<text><![CDATA[Mileage Surcharge]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
 							<textField pattern="$#,##0.00;-$#,##0.00" isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="65" height="20" uuid="ab7d27a3-e6ec-4bce-923a-4889d9398514"/>
+								<reportElement x="0" y="0" width="182" height="30" uuid="ab7d27a3-e6ec-4bce-923a-4889d9398514"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book"/>
 								</textElement>

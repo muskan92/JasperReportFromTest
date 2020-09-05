@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporttestfeasibility1" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="10" uuid="2abf7cd5-23c0-4497-83d1-23fc24ec4797">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="27"/>
+    <style name="table">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 2">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 3">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 4">
+        <box>
+            <pen lineWidth="1.0" lineColor="#FFFFFF"/>
+        </box>
+    </style>
+    <style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#FFFFFF"/>
+        </box>
+    </style>
+    <style name="table 4_CH" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#FFFFFF"/>
+        </box>
+    </style>
+    <style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#FFFFFF"/>
+        </box>
+    </style>
+    <style name="table 5">
+        <box>
+            <pen lineWidth="1.0" lineColor="#FFFFFF"/>
+        </box>
+    </style>
+    <style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+            <bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+        </box>
+    </style>
+    <style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+            <bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+        </box>
+    </style>
+    <style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+            <bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+        </box>
+    </style>
+    <style name="table 6">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 6_TH" mode="Opaque" backcolor="#CCCCCC">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 6_CH" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+            <style backcolor="#CCCCCC"/>
+        </conditionalStyle>
+    </style>
+    <subDataset name="Dataset_VehicleCongestionMileageDetails" uuid="58241e63-fe5c-42ee-b3c6-96ff337db9e6">
+        <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+        <field name="surchargeDate" class="java.lang.String"/>
+        <field name="totalMiles" class="java.lang.Double"/>
+        <field name="mileSurcharge" class="java.lang.Double"/>
+    </subDataset>
+    <parameter name="PeriodEndDate" class="java.util.Date"/>
+    <parameter name="PeriodStartDate" class="java.util.Date"/>
+    <parameter name="dataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+    <parameter name="jrxmlDirPath" class="java.lang.String"/>
+    <parameter name="imageDirPath" class="java.lang.String" isForPrompting="false"/>
+    <parameter name="contactEmail" class="java.lang.String"/>
+    <parameter name="contactNumber" class="java.lang.String"/>
+    <parameter name="testp" class="java.lang.String"/>
+    <parameter name="muskanDate" class="java.util.Date"/>
+    <field name="address" class="java.lang.String"/>
+    <field name="vin" class="java.lang.String"/>
+    <field name="azugaCustomerNumber" class="java.lang.String"/>
+    <field name="accountHolder" class="java.lang.String"/>
+    <field name="vehicleName" class="java.lang.String"/>
+    <field name="vehicleCongestionCBDSurchargeDetails" class="java.lang.Object"/>
+    <field name="vehicleCongestionMileageDetails" class="java.lang.Object"/>
+    <field name="congestionMileageDetailsList" class="java.util.List"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="778" splitType="Stretch">
+            <frame>
+                <reportElement mode="Opaque" x="250" y="0" width="325" height="106" backcolor="#CCCCCC" uuid="996d007a-8ffc-4af4-926b-1fe5738a8d57"/>
+            </frame>
+            <image>
+                <reportElement x="0" y="0" width="94" height="30" uuid="58191a68-bfe7-4180-998b-b7448a35176d"/>
+                <imageExpression><![CDATA[$P{imageDirPath}.toString()+"logo_azuga.png"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="0" y="30" width="80" height="20" forecolor="#999999" uuid="c0cbaea1-9f82-4b6d-b021-cd2164f00416"/>
+                <textElement>
+                    <font fontName="Franklin Gothic Book" size="8"/>
+                </textElement>
+                <text><![CDATA[2570 N. 1st Street
+San Jose, CA 95131]]></text>
+            </staticText>
+            <textField isBlankWhenNull="true">
+                <reportElement x="0" y="52" width="200" height="38" uuid="1f121f0e-c4c3-46d1-91eb-72d51f5b972a"/>
+                <textElement verticalAlignment="Top" markup="html">
+                    <font fontName="Franklin Gothic Book" size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="301" y="5" width="100" height="15" uuid="468bb4a5-4edb-44c8-b991-0ac95712612c"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Franklin Gothic Book" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Statement Period:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="301" y="20" width="100" height="15" uuid="559298b4-a1df-421d-8d29-0102b7110a35"/>
+                <textElement verticalAlignment="Middle">
+                    <font fontName="Franklin Gothic Book" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Account Number:]]></text>
+            </staticText>
+            <textField pattern="MMM d,  yyyy" isBlankWhenNull="true">
+                <reportElement positionType="Float" mode="Transparent" x="425" y="5" width="65" height="15" uuid="abc873fd-15d4-4b66-b225-fa166f6e227b"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="Franklin Gothic Book"/>
+                    <paragraph rightIndent="2"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PeriodStartDate}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="460" y="20" width="105" height="15" uuid="74c75e26-25de-4495-8098-e7ca24e2f755"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="Franklin Gothic Book"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{azugaCustomerNumber}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement mode="Transparent" x="490" y="5" width="10" height="15" uuid="9421e59f-d022-4774-9156-0f0ba8b92b78">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="local_mesure_unity" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="10"/>
+                </textElement>
+                <text><![CDATA[-]]></text>
+            </staticText>
+            <textField pattern="MMM d,  yyyy" isBlankWhenNull="true">
+                <reportElement x="500" y="5" width="65" height="15" uuid="66426140-cfeb-4cb1-b167-ed31d4d6a8d5">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+                </reportElement>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font fontName="Franklin Gothic Book" size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PeriodEndDate}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="30" y="140" width="396" height="30" uuid="71969b12-ad70-4c8f-b6dd-6cad31089fe9"/>
+                <textElement>
+                    <font fontName="Franklin Gothic Book" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Vin ;"+$F{vin}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="363" y="60" width="202" height="15" uuid="9bb71b4e-1f84-421b-a85b-32e4f3ed1e3e"/>
+                <textElement textAlignment="Right">
+                    <font fontName="Franklin Gothic Book"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Questions? Email: " + $P{contactEmail}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="true">
+                <reportElement x="377" y="75" width="188" height="15" uuid="96d2d085-af61-4bd9-bb61-fe7fb8c42061"/>
+                <textElement textAlignment="Right">
+                    <font fontName="Franklin Gothic Book"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Phone: " + $P{testp} +$P{muskanDate}]]></textFieldExpression>
+            </textField>
+            <componentElement>
+                <reportElement key="table 6" style="table 6" x="20" y="223" width="545" height="50" isRemoveLineWhenBlank="true" uuid="b09161a8-e6f7-4d12-aead-a0ce02c08e47"/>
+                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <datasetRun subDataset="Dataset_VehicleCongestionMileageDetails" uuid="3aa47433-c989-4f2f-b689-32048eb5dea0">
+                        <dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{congestionMileageDetailsList})]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:column width="156" uuid="8cdfb9c4-5aab-4b7e-b291-62f14b6f302a">
+                        <jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="156" height="30" isRemoveLineWhenBlank="true" uuid="25a0a7e1-c833-4a55-b549-3e88ce05dd56"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle">
+                                    <font fontName="Franklin Gothic Book" isBold="true"/>
+                                </textElement>
+                                <text><![CDATA[Date]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 6_TD" height="30" rowSpan="1">
+                            <textField isBlankWhenNull="true">
+                                <reportElement x="0" y="0" width="156" height="30" uuid="152bc489-1a12-4bac-b00f-fe010a84d9c6"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle">
+                                    <font fontName="Franklin Gothic Book"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{surchargeDate}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="191" uuid="9b2de0e2-cbed-41af-8814-a9ade441d288">
+                        <jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="191" height="30" uuid="d307c886-f768-45bc-8fa0-6ae87d23e509"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle">
+                                    <font fontName="Franklin Gothic Book" isBold="true"/>
+                                </textElement>
+                                <text><![CDATA[Number of Miles]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 6_TD" height="30" rowSpan="1">
+                            <textField isBlankWhenNull="true">
+                                <reportElement x="0" y="0" width="191" height="30" uuid="51bcfe63-3250-4b07-9aec-ef8329df9fbb"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle">
+                                    <font fontName="Franklin Gothic Book"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{totalMiles}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="182" uuid="4a9f9ac3-a613-4079-9558-3488ec9d3d5d">
+                        <jr:columnHeader style="table 6_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="182" height="30" uuid="6a98e809-22e3-4807-a6dc-f82dc5a1644b"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle">
+                                    <font fontName="Franklin Gothic Book" isBold="true"/>
+                                </textElement>
+                                <text><![CDATA[Mileage Surcharge]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="table 6_TD" height="30" rowSpan="1">
+                            <textField pattern="$#,##0.00;-$#,##0.00" isBlankWhenNull="true">
+                                <reportElement x="0" y="0" width="182" height="30" uuid="ab7d27a3-e6ec-4bce-923a-4889d9398514"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle">
+                                    <font fontName="Franklin Gothic Book"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{mileSurcharge}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                </jr:table>
+            </componentElement>
+            <staticText>
+                <reportElement x="181" y="234" width="220" height="20" uuid="0536e734-5daf-419f-9e20-484fc981bb82">
+                    <printWhenExpression><![CDATA[$F{congestionMileageDetailsList}.size() == 0]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center" verticalAlignment="Top">
+                    <font fontName="Franklin Gothic Book"/>
+                </textElement>
+                <text><![CDATA[There was no tolling activity for the month]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="40" y="183" width="100" height="20" uuid="a4b058f7-682f-464b-b381-727b489d038f"/>
+                <text><![CDATA[Mileage Surcharge]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="113" y="106" width="137" height="20" uuid="e2ad9709-f064-4a99-ab2f-ccc10d9214e0"/>
+                <textFieldExpression><![CDATA["Vehicle:"+$F{vehicleName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="345" y="106" width="100" height="20" uuid="41706ef5-422e-415f-9bfc-484544e296f2"/>
+                <textFieldExpression><![CDATA["Vin ;"+$F{vin}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageFooter>
+        <band height="34" splitType="Stretch">
+            <textField>
+                <reportElement x="445" y="14" width="100" height="20" uuid="8abaec6c-10f8-4f5f-9d7f-9052c271d882"/>
+                <textElement textAlignment="Right">
+                    <font fontName="Franklin Gothic Book"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>

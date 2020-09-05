@@ -1,5 +1,6 @@
 package com.stackextend.generatepdfdocument.service;
 
+import com.stackextend.generatepdfdocument.model.CongestionInvoiceData;
 import com.stackextend.generatepdfdocument.model.OrderModel;
 import com.stackextend.generatepdfdocument.model.TollingData;
 import net.sf.jasperreports.engine.JRException;
@@ -29,7 +30,7 @@ public class InvoiceService {
     private String logo_path = "/jasper/images/logo_azuga.png";
 
     //@Value("${invoice.template.path}")
-    private String invoice_template = "/jasper/localization/tollingi95.jrxml";
+    private String invoice_template = "/jasper/localization/congestion.jrxml";
 
     public File generateInvoiceFor(OrderModel order, Locale locale) throws IOException {
 
@@ -61,7 +62,7 @@ public class InvoiceService {
         }
     }
 
-    public void generateInvoiceForMuskan(TollingData tollingData, Locale locale) throws IOException {
+    public void generateInvoiceForMuskan(CongestionInvoiceData congestionInvoiceData, Locale locale) throws IOException {
 
         HashMap<String, Object> parameterMap = new HashMap<String, Object>();
         parameterMap.put("PeriodStartDate", new Date());
@@ -89,7 +90,7 @@ public class InvoiceService {
             // final Map<String, Object> parameters = parameters(order, locale);
 
             // Create an empty datasource.
-            final JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(Collections.singletonList(tollingData));
+            final JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(Collections.singletonList(congestionInvoiceData));
 
             // Render the invoice as a PDF file.
             JasperReportsUtils.renderAsPdf(report, parameterMap, dataSource, pos);
