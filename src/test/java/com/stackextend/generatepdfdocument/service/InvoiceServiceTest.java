@@ -25,12 +25,12 @@ public void setUp(){
 
     List<CongestionCBDSurcharge> congestionCBDSurchargeList = new ArrayList<>();
     IntStream.range(1,20).forEach(i->
-            congestionCBDSurchargeList.add(new CongestionCBDSurcharge("fa"+i,new BigDecimal(i)))
+            congestionCBDSurchargeList.add(new CongestionCBDSurcharge(new Date(),new BigDecimal(i)))
     );
 
     List<CongestionMileageDetails> congestionMileageDetailsList = new ArrayList<>();
 
-    IntStream.range(1,20).forEach(i->
+    IntStream.range(1,25).forEach(i->
             congestionMileageDetailsList.add(new CongestionMileageDetails(9.0,18.0,new Date()))
     );
 

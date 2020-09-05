@@ -35,6 +35,22 @@ public class CongestionInvoiceData {
 		this.totalZoneSurcharge = congestionCBDSurchargeList.stream().map(it->it.getZoneSurcharge()).reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 
+	public Double getTotalMilesDriven() {
+		return totalMilesDriven;
+	}
+
+	public void setTotalMilesDriven(Double totalMilesDriven) {
+		this.totalMilesDriven = totalMilesDriven;
+	}
+
+	public Double getTotalSurcharge() {
+		return totalSurcharge;
+	}
+
+	public void setTotalSurcharge(Double totalSurcharge) {
+		this.totalSurcharge = totalSurcharge;
+	}
+
 	public BigDecimal getTotalZoneSurcharge() {
 		return totalZoneSurcharge;
 	}

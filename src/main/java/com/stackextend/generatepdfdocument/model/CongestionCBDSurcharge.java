@@ -1,22 +1,22 @@
 package com.stackextend.generatepdfdocument.model;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.Date;
 
 public class CongestionCBDSurcharge {
-	
-	private String zoneEntryTime;
+
+	private Date zoneEntryTime;
 	private BigDecimal zoneSurcharge;
 
-	public CongestionCBDSurcharge(String zoneEntryTime, BigDecimal zoneSurcharge) {
+	public CongestionCBDSurcharge(Date zoneEntryTime, BigDecimal zoneSurcharge) {
 		this.zoneEntryTime = zoneEntryTime;
 		this.zoneSurcharge = zoneSurcharge;
 	}
 
-	public String getZoneEntryTime() {
+	public Date getZoneEntryTime() {
 		return zoneEntryTime;
 	}
-	public void setZoneEntryTime(String zoneEntryTime) {
+	public void setZoneEntryTime(Date zoneEntryTime) {
 		this.zoneEntryTime = zoneEntryTime;
 	}
 	public BigDecimal getZoneSurcharge() {

@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporttestfeasibility1" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="10" uuid="2abf7cd5-23c0-4497-83d1-23fc24ec4797">
     <property name="ireport.zoom" value="1.0"/>
     <property name="ireport.x" value="0"/>
-    <property name="ireport.y" value="90"/>
+    <property name="ireport.y" value="236"/>
     <style name="table">
         <box>
             <pen lineWidth="1.0" lineColor="#000000"/>
@@ -166,7 +166,7 @@
         <queryString>
             <![CDATA[]]>
         </queryString>
-        <field name="zoneEntryTime" class="java.lang.String"/>
+        <field name="zoneEntryTime" class="java.util.Date"/>
         <field name="zoneSurcharge" class="java.math.BigDecimal"/>
     </subDataset>
     <parameter name="PeriodEndDate" class="java.util.Date"/>
@@ -185,6 +185,9 @@
     <field name="vehicleName" class="java.lang.String"/>
     <field name="congestionMileageDetailsList" class="java.util.List"/>
     <field name="congestionCBDSurchargeList" class="java.util.List"/>
+    <field name="totalMilesDriven" class="java.lang.Double"/>
+    <field name="totalZoneSurcharge" class="java.math.BigDecimal"/>
+    <field name="totalSurcharge" class="java.lang.Double"/>
     <background>
         <band splitType="Stretch"/>
     </background>
@@ -363,19 +366,28 @@ San Jose, CA 95131]]></text>
                 <text><![CDATA[There was no tolling activity for the month]]></text>
             </staticText>
             <staticText>
-                <reportElement x="40" y="183" width="100" height="20" uuid="a4b058f7-682f-464b-b381-727b489d038f"/>
+                <reportElement positionType="Float" x="40" y="183" width="141" height="20" uuid="a4b058f7-682f-464b-b381-727b489d038f"/>
+                <textElement>
+                    <font fontName="Franklin Gothic Book" size="11" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Mileage Surcharge]]></text>
             </staticText>
-            <textField>
+            <textField isBlankWhenNull="false">
                 <reportElement x="113" y="106" width="137" height="20" uuid="e2ad9709-f064-4a99-ab2f-ccc10d9214e0"/>
-                <textFieldExpression><![CDATA["Vehicle:"+$F{vehicleName}]]></textFieldExpression>
+                <textElement>
+                    <font size="12" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{vehicleName}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="345" y="106" width="100" height="20" uuid="41706ef5-422e-415f-9bfc-484544e296f2"/>
-                <textFieldExpression><![CDATA["Vin ;"+$F{vin}]]></textFieldExpression>
+                <reportElement x="425" y="106" width="100" height="20" uuid="41706ef5-422e-415f-9bfc-484544e296f2"/>
+                <textElement>
+                    <font size="12" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{vin}]]></textFieldExpression>
             </textField>
             <componentElement>
-                <reportElement key="table 6" style="table 6" positionType="Float" x="20" y="324" width="545" height="50" isRemoveLineWhenBlank="true" uuid="4bc80f76-103e-45d8-8e2c-c84cc1d43bfb"/>
+                <reportElement key="table 6" style="table 6" positionType="Float" x="20" y="362" width="545" height="50" isRemoveLineWhenBlank="true" uuid="4bc80f76-103e-45d8-8e2c-c84cc1d43bfb"/>
                 <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
                     <datasetRun subDataset="Dataset_VehicleCongestionCBDDetails" uuid="c84f95c9-d7b7-4127-b4d4-d6d8eb872a43">
                         <dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{congestionCBDSurchargeList})]]></dataSourceExpression>
@@ -423,8 +435,63 @@ San Jose, CA 95131]]></text>
                 </jr:table>
             </componentElement>
             <staticText>
-                <reportElement x="50" y="291" width="100" height="20" uuid="871a77e7-76ba-4c72-81d6-c26dbe5c0842"/>
-                <text><![CDATA[CBD Surcharge]]></text>
+                <reportElement positionType="Float" x="30" y="338" width="229" height="20" uuid="871a77e7-76ba-4c72-81d6-c26dbe5c0842"/>
+                <textElement>
+                    <font fontName="Franklin Gothic Book" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Capital Business District Surcharge]]></text>
+            </staticText>
+            <textField>
+                <reportElement positionType="Float" x="427" y="438" width="128" height="20" uuid="55618397-07d7-497c-b99f-43ca20edde64"/>
+                <textFieldExpression><![CDATA[$F{totalZoneSurcharge}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement positionType="Float" x="259" y="289" width="132" height="20" uuid="742c1602-68a2-4255-ac71-e16b1cf16569"/>
+                <textFieldExpression><![CDATA[$F{totalMilesDriven}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement positionType="Float" x="441" y="289" width="100" height="20" uuid="a6a55991-0a72-4566-99c5-f6e431360b2c"/>
+                <textFieldExpression><![CDATA[$F{totalSurcharge}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement positionType="Float" x="20" y="282" width="535" height="1" uuid="fb591f99-9df5-44e7-9d9b-4b1362ebcf90"/>
+            </line>
+            <staticText>
+                <reportElement positionType="Float" x="50" y="289" width="100" height="20" uuid="801aeea4-0ec8-4fa0-b6b7-7be2febf320b"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Totals for Month]]></text>
+            </staticText>
+            <staticText>
+                <reportElement positionType="Float" x="60" y="438" width="100" height="20" uuid="439e92fd-3489-4dcc-835a-dc4dba747504"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Totals for Month]]></text>
+            </staticText>
+            <line>
+                <reportElement positionType="Float" x="20" y="307" width="535" height="1" uuid="e7d2226c-1852-4a92-a364-117ca64be854"/>
+            </line>
+            <line>
+                <reportElement positionType="Float" x="30" y="462" width="535" height="1" uuid="ca8e7be5-116e-49af-a364-76fad406aa04"/>
+            </line>
+            <line>
+                <reportElement positionType="Float" x="30" y="434" width="535" height="1" uuid="09eef007-3afb-45d2-9cc5-69da5c3f1d9a"/>
+            </line>
+            <staticText>
+                <reportElement x="40" y="106" width="100" height="20" uuid="2040ef63-24f7-4069-9fcc-0b9b87685458"/>
+                <textElement>
+                    <font fontName="Franklin Gothic Book" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Vehicle :]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="291" y="106" width="100" height="20" uuid="b65db8c0-6287-4c3f-8271-bbeab905399b"/>
+                <textElement>
+                    <font fontName="Franklin Gothic Book" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Vin :]]></text>
             </staticText>
         </band>
     </title>
