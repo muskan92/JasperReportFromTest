@@ -1,6 +1,6 @@
 package com.stackextend.generatepdfdocument.model;
 
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class CongestionInvoiceData {
@@ -18,24 +18,45 @@ public class CongestionInvoiceData {
 	private String model;
 	private String vehicleId;
 
+	private BigDecimal totalZoneSurcharge;
+	private Double totalMilesDriven;
+	private Double totalSurcharge;
+	private List<CongestionCBDSurcharge> congestionCBDSurchargeList;
 
+	private List<CongestionMileageDetails> congestionMileageDetailsList;
 
-	List<VehicleCongestionMileageSurchargeDetails.CongestionMileageDetails> congestionMileageDetailsList;
-
-	private VehicleCongestionMileageSurchargeDetails vehicleCongestionMileageDetails;
-	private VehicleCongestionCBDSurchargeDetails vehicleCongestionCBDSurchargeDetails;
-
-	
-	public CongestionInvoiceData(String accountHolder, String address, 
-			String azugaCustomerNumber, String state) {
-		this.accountHolder = accountHolder;
-		this.address = address;
-		this.azugaCustomerNumber = azugaCustomerNumber;
-		this.state = state;
+	public CongestionInvoiceData(List<CongestionCBDSurcharge> congestionCBDSurchargeList,
+								 List<CongestionMileageDetails> congestionMileageDetailsList
+								 ) {
+	this.congestionCBDSurchargeList = congestionCBDSurchargeList;
+	this.congestionMileageDetailsList = congestionMileageDetailsList;
+		this.totalSurcharge =  congestionMileageDetailsList.stream().mapToDouble(it-> it.getMileSurcharge()).sum();
+		this.totalMilesDriven = congestionMileageDetailsList.stream().mapToDouble(it-> it.getTotalMiles()).sum();
+		this.totalZoneSurcharge = congestionCBDSurchargeList.stream().map(it->it.getZoneSurcharge()).reduce(BigDecimal.ZERO, BigDecimal::add);
 	}
 
-	public CongestionInvoiceData() {
+	public BigDecimal getTotalZoneSurcharge() {
+		return totalZoneSurcharge;
+	}
 
+	public void setTotalZoneSurcharge(BigDecimal totalZoneSurcharge) {
+		this.totalZoneSurcharge = totalZoneSurcharge;
+	}
+
+	public List<CongestionCBDSurcharge> getCongestionCBDSurchargeList() {
+		return congestionCBDSurchargeList;
+	}
+
+	public void setCongestionCBDSurchargeList(List<CongestionCBDSurcharge> congestionCBDSurchargeList) {
+		this.congestionCBDSurchargeList = congestionCBDSurchargeList;
+	}
+
+	public List<CongestionMileageDetails> getCongestionMileageDetailsList() {
+		return congestionMileageDetailsList;
+	}
+
+	public void setCongestionMileageDetailsList(List<CongestionMileageDetails> congestionMileageDetailsList) {
+		this.congestionMileageDetailsList = congestionMileageDetailsList;
 	}
 
 	public String getVehicleId() {
@@ -46,32 +67,7 @@ public class CongestionInvoiceData {
 		this.vehicleId = vehicleId;
 	}
 
-	public VehicleCongestionMileageSurchargeDetails getVehicleCongestionMileageDetails() {
-		return vehicleCongestionMileageDetails;
-	}
 
-	public void setVehicleCongestionMileageDetails(
-			VehicleCongestionMileageSurchargeDetails vehicleCongestionMileageDetails) {
-		this.vehicleCongestionMileageDetails = vehicleCongestionMileageDetails;
-	}
-
-	public VehicleCongestionCBDSurchargeDetails getVehicleCongestionCBDSurchargeDetails() {
-		return vehicleCongestionCBDSurchargeDetails;
-	}
-
-	public void setVehicleCongestionCBDSurchargeDetails(
-			VehicleCongestionCBDSurchargeDetails vehicleCongestionCBDSurchargeDetails) {
-		this.vehicleCongestionCBDSurchargeDetails = vehicleCongestionCBDSurchargeDetails;
-	}
-
-
-	public List<VehicleCongestionMileageSurchargeDetails.CongestionMileageDetails> getCongestionMileageDetailsList() {
-		return congestionMileageDetailsList;
-	}
-
-	public void setCongestionMileageDetailsList(List<VehicleCongestionMileageSurchargeDetails.CongestionMileageDetails> congestionMileageDetailsList) {
-		this.congestionMileageDetailsList = congestionMileageDetailsList;
-	}
 	public String getAccountHolder() {
 		return accountHolder;
 	}

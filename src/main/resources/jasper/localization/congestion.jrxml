@@ -158,7 +158,7 @@
         <queryString>
             <![CDATA[]]>
         </queryString>
-        <field name="surchargeDate" class="java.lang.String"/>
+        <field name="surchargeDate" class="java.util.Date"/>
         <field name="totalMiles" class="java.lang.Double"/>
         <field name="mileSurcharge" class="java.lang.Double"/>
     </subDataset>
@@ -176,9 +176,8 @@
     <field name="azugaCustomerNumber" class="java.lang.String"/>
     <field name="accountHolder" class="java.lang.String"/>
     <field name="vehicleName" class="java.lang.String"/>
-    <field name="vehicleCongestionCBDSurchargeDetails" class="java.lang.Object"/>
-    <field name="vehicleCongestionMileageDetails" class="java.lang.Object"/>
     <field name="congestionMileageDetailsList" class="java.util.List"/>
+    <field name="congestionCBDSurchargeList" class="java.util.List"/>
     <background>
         <band splitType="Stretch"/>
     </background>
