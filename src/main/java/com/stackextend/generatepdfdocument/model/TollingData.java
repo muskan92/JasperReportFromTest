@@ -6,8 +6,21 @@ public class TollingData {
 	private String accountHolder;
 	private String address;
 	private String azugaCustomerNumber;
+	private String tesf;
+	private int muskSal;
+
+
 
 	private List<VehicleTollDetails> vehicleTollDetailsList;
+	private List<VehicleTollDetails> abcList;
+
+	public List<VehicleTollDetails> getAbcList() {
+		return abcList;
+	}
+
+	public void setAbcList(List<VehicleTollDetails> abcList) {
+		this.abcList = abcList;
+	}
 
 	public String getAccountHolder() {
 		return accountHolder;
@@ -39,6 +52,21 @@ public class TollingData {
 
 	public void setVehicleTollDetailsList(List<VehicleTollDetails> vehicleTollDetailsList) {
 		this.vehicleTollDetailsList = vehicleTollDetailsList;
+	}
+	public String getTesf() {
+		return tesf;
+	}
+
+	public void setTesf(String tesf) {
+		this.tesf = tesf;
+	}
+
+	public int getMuskSal() {
+		return muskSal;
+	}
+
+	public void setMuskSal(int muskSal) {
+		this.muskSal = muskSal;
 	}
 
 	@Override

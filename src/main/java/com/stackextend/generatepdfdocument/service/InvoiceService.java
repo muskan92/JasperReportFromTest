@@ -72,6 +72,9 @@ public class InvoiceService {
         parameterMap.put("jrxmlDirPath", "/jasper/localization/");
         parameterMap.put("contactNumber", "122355");
         parameterMap.put("contactEmail", "sakhk@dhu");
+        parameterMap.put("testp", "testparam");
+        parameterMap.put("muskanDate", new Date());
+
 
         File pdfFile = File.createTempFile("my-invoice", ".pdf");
 

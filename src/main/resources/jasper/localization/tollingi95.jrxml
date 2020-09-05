@@ -165,6 +165,21 @@
 		<field name="exitTollPlaza" class="java.lang.String"/>
 		<field name="exitTollTime" class="java.lang.String"/>
 		<field name="amount" class="java.math.BigDecimal"/>
+		<field name="listf" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Dataset_AbcList" uuid="8d355b7b-e87a-4306-80fa-f8052708ea7e">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="date" class="java.lang.String"/>
+		<field name="location" class="java.lang.String"/>
+		<field name="entryTollPlaza" class="java.lang.String"/>
+		<field name="entryTollTime" class="java.lang.String"/>
+		<field name="exitTollPlaza" class="java.lang.String"/>
+		<field name="exitTollTime" class="java.lang.String"/>
+		<field name="amount" class="java.math.BigDecimal"/>
+		<field name="listf" class="java.lang.String"/>
 	</subDataset>
 	<parameter name="PeriodEndDate" class="java.util.Date"/>
 	<parameter name="PeriodStartDate" class="java.util.Date"/>
@@ -173,19 +188,26 @@
 	<parameter name="imageDirPath" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="contactEmail" class="java.lang.String"/>
 	<parameter name="contactNumber" class="java.lang.String"/>
+	<parameter name="testp" class="java.lang.String"/>
+	<parameter name="muskanDate" class="java.util.Date"/>
 	<field name="address" class="java.lang.String"/>
 	<field name="azugaCustomerNumber" class="java.lang.String"/>
 	<field name="accountHolder" class="java.lang.String"/>
 	<field name="vehicleTollDetailsList" class="java.util.List">
 		<fieldDescription><![CDATA[vehicleTollDetailsList]]></fieldDescription>
 	</field>
+	<field name="tesf" class="java.lang.String"/>
+	<field name="abcList" class="java.util.List">
+		<fieldDescription><![CDATA[abcList]]></fieldDescription>
+	</field>
+	<field name="muskSal" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="240" splitType="Stretch">
+		<band height="778" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="291" y="0" width="284" height="90" backcolor="#CCCCCC" uuid="996d007a-8ffc-4af4-926b-1fe5738a8d57"/>
+				<reportElement mode="Opaque" x="250" y="0" width="325" height="106" backcolor="#CCCCCC" uuid="996d007a-8ffc-4af4-926b-1fe5738a8d57"/>
 			</frame>
 			<image>
 				<reportElement x="0" y="0" width="94" height="30" uuid="58191a68-bfe7-4180-998b-b7448a35176d"/>
@@ -263,7 +285,7 @@ San Jose, CA 95131]]></text>
 				<textElement>
 					<font fontName="Franklin Gothic Book" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Hello " + $F{accountHolder}+", here’s your Tolling statement for this month."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Hello " + $F{tesf}+$F{muskSal}+", here’s your Tolling statement for this month."]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="363" y="60" width="202" height="15" uuid="9bb71b4e-1f84-421b-a85b-32e4f3ed1e3e"/>
@@ -273,14 +295,14 @@ San Jose, CA 95131]]></text>
 				<textFieldExpression><![CDATA["Questions? Email: " + $P{contactEmail}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="425" y="75" width="140" height="15" uuid="96d2d085-af61-4bd9-bb61-fe7fb8c42061"/>
+				<reportElement x="377" y="75" width="188" height="15" uuid="96d2d085-af61-4bd9-bb61-fe7fb8c42061"/>
 				<textElement textAlignment="Right">
 					<font fontName="Franklin Gothic Book"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Phone: " + $P{contactNumber}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Phone: " + $P{testp} +$P{muskanDate}]]></textFieldExpression>
 			</textField>
 			<componentElement>
-				<reportElement key="table 6" style="table 6" x="30" y="190" width="545" height="50" isRemoveLineWhenBlank="true" uuid="b09161a8-e6f7-4d12-aead-a0ce02c08e47"/>
+				<reportElement key="table 6" style="table 6" x="20" y="223" width="545" height="50" isRemoveLineWhenBlank="true" uuid="b09161a8-e6f7-4d12-aead-a0ce02c08e47"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Dataset_VehicleTollingDetails" uuid="3aa47433-c989-4f2f-b689-32048eb5dea0">
 						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{vehicleTollDetailsList})]]></dataSourceExpression>
@@ -295,7 +317,7 @@ San Jose, CA 95131]]></text>
 								<text><![CDATA[Date]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
 							<textField isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="96" height="20" uuid="152bc489-1a12-4bac-b00f-fe010a84d9c6"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -315,8 +337,8 @@ San Jose, CA 95131]]></text>
 								<text><![CDATA[Location]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
-							<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="68" height="20" uuid="cf57ed47-7532-4f89-850b-33610c0d3bc2"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book"/>
@@ -335,8 +357,8 @@ San Jose, CA 95131]]></text>
 								<text><![CDATA[Entry Plaza]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
-							<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="90" height="20" uuid="ebc2b51f-dbe0-4d01-8bb0-420a071b8124"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book"/>
@@ -355,7 +377,7 @@ San Jose, CA 95131]]></text>
 								<text><![CDATA[Entry Time]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
 							<textField isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="68" height="20" uuid="51bcfe63-3250-4b07-9aec-ef8329df9fbb"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -375,8 +397,8 @@ San Jose, CA 95131]]></text>
 								<text><![CDATA[Exit Plaza]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
-							<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="90" height="20" uuid="75beb3d6-2dac-41f2-876f-2fc73e89116c"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book"/>
@@ -395,7 +417,7 @@ San Jose, CA 95131]]></text>
 								<text><![CDATA[Exit Time]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
 							<textField isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="68" height="20" uuid="e6fd5764-6561-4ae5-9fc3-b89f31f6bd4a"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -415,26 +437,30 @@ San Jose, CA 95131]]></text>
 								<text><![CDATA[Amount]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:detailCell style="table 6_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table 6_TD" height="30" rowSpan="1">
 							<textField pattern="$#,##0.00;-$#,##0.00" isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="65" height="20" uuid="ab7d27a3-e6ec-4bce-923a-4889d9398514"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Franklin Gothic Book"/>
 								</textElement>
-								<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+								<textFieldExpression><![CDATA[$F{listf}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
 				</jr:table>
 			</componentElement>
 			<staticText>
-				<reportElement x="182" y="203" width="220" height="20" uuid="0536e734-5daf-419f-9e20-484fc981bb82">
+				<reportElement x="181" y="234" width="220" height="20" uuid="0536e734-5daf-419f-9e20-484fc981bb82">
 					<printWhenExpression><![CDATA[$F{vehicleTollDetailsList}.size() == 0]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="Franklin Gothic Book"/>
 				</textElement>
 				<text><![CDATA[There was no tolling activity for the month]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="183" width="100" height="20" uuid="a4b058f7-682f-464b-b381-727b489d038f"/>
+				<text><![CDATA[Mileage Surcharge]]></text>
 			</staticText>
 		</band>
 	</title>

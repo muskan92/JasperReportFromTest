@@ -10,9 +10,18 @@ public class VehicleTollDetails {
 	private String exitTollPlaza;
 	private String exitTollTime;
 	private BigDecimal amount;
-	
+	private String listf;
+
+	public String getListf() {
+		return listf;
+	}
+
+	public void setListf(String listf) {
+		this.listf = listf;
+	}
+
 	public VehicleTollDetails(String date, String location, String entryTollPlaza, String entryTollTime,
-			String exitTollPlaza, String exitTollTime, BigDecimal amount) {
+							  String exitTollPlaza, String exitTollTime, BigDecimal amount) {
 		super();
 		this.date = date;
 		this.location = location;
